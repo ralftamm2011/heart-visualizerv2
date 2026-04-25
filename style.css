@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #120010, #000);
+}
+
+canvas {
+  display: block;
+}
+
+#ui {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+#startBtn {
+  padding: 10px 15px;
+  background: hotpink;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
