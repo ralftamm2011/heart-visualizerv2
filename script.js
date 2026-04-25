@@ -1,22 +1,24 @@
+window.onload = () => {
+
 const canvas = document.getElementById("c");
 const ctx = canvas.getContext("2d");
 
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-addEventListener("resize", () => {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
 
-// BUTTON
+// UI
 const btn = document.getElementById("startBtn");
 const message = document.getElementById("message");
 
+// particles
 let particles = [];
 
-// background particles
-for (let i = 0; i < 600; i++) {
+for (let i = 0; i < 500; i++) {
   particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
@@ -24,7 +26,7 @@ for (let i = 0; i < 600; i++) {
   });
 }
 
-// draw particles
+// animation loop
 function draw() {
   requestAnimationFrame(draw);
 
@@ -37,15 +39,17 @@ function draw() {
     ctx.fillStyle = "hotpink";
     ctx.fill();
 
-    p.y += 0.3;
+    p.y += 0.5;
     if (p.y > canvas.height) p.y = 0;
   }
 }
 
 draw();
 
-// CLICK EVENT
+// click event
 btn.addEventListener("click", () => {
   btn.style.display = "none";
   message.classList.add("show");
 });
+
+};
